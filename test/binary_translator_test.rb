@@ -37,8 +37,10 @@ class BinaryTranslatorTest < Minitest::Test
     character_binary1 = bt.translate("!@{$#%^&*()}")
     character_binary2 = bt.translate("!")
     character_binary3 = bt.translate("*")
+    character_binary4 = bt.translate("~`_-+=[]|;:'/<>.,?")
     assert_equal "", character_binary1
     assert_equal "", character_binary2
     assert_equal "", character_binary3
+    assert_equal "", character_binary4
   end
 end
