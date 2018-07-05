@@ -33,7 +33,7 @@ class BinaryTranslator
   end
 
   def translate(string)
-    array_characters = string.chars
+    array_characters = string.downcase.chars
     array_for_string = []
     array_characters.each do |char|
       array_for_string.push(@alpha_to_binary[char])
