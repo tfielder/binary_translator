@@ -4,7 +4,6 @@ require 'minitest/pride'
 
 class BinaryTranslatorTest < Minitest::Test
   def test_initiates_a_class
-    skip
     bt = BinaryTranslator.new
     bt2 = BinaryTranslator.new
     assert_instance_of BinaryTranslator, bt

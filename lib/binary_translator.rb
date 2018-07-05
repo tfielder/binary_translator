@@ -35,8 +35,8 @@ class BinaryTranslator
   def translate(string)
     array_characters = string.chars
     array_for_string = []
-    array_characters.each do |character|
-      @alpha_to_binary[character] << array_for_string
+    array_characters.each do |char|
+      array_for_string.push(@alpha_to_binary[char])
     end
     return array_for_string.join
   end
