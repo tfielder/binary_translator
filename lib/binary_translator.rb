@@ -33,16 +33,7 @@ class BinaryTranslator
     }
   end
 
-  # def lowercase(string)
-  #   string.downcase
-  # end
-  #
-  # def delete_characters(string)
-  #
-  # end
-
   def translate(string)
-    #lowercase(string)
     array_characters = string.downcase.delete("!@{$#%^&*()}~`_=[]|;:'/\'<>\".,-?+\\").chars
     array_for_string = []
     array_characters.each do |char|
@@ -50,4 +41,13 @@ class BinaryTranslator
     end
     return array_for_string.join
   end
+
+  def binary_to_strings(binary)
+    return binary.scan(/....../)
+  end
+
+  def translates_to_text(binary)
+
+  end
+
 end
