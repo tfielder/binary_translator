@@ -43,4 +43,12 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "", character_binary3
     assert_equal "", character_binary4
   end
+
+  def test_translates_spaces
+    bt = BinaryTranslator.new
+    space_binary1 = bt.translate(" ")
+    space_binary2 = bt.translate("   ")
+    assert_equal "000000", space_binary1
+    assert_equal "000000", space_binary2
+  end
 end
