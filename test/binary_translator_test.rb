@@ -33,7 +33,7 @@ class BinaryTranslatorTest < Minitest::Test
   end
 
   def test_characters_not_letters
-
+    skip
     bt = BinaryTranslator.new
     character_binary1 = bt.translate("!@{$#%^&*()}")
     character_binary2 = bt.translate("!")
@@ -46,12 +46,12 @@ class BinaryTranslatorTest < Minitest::Test
   end
 
   def test_translates_spaces
-    skip
+
     bt = BinaryTranslator.new
     space_binary1 = bt.translate(" ")
     space_binary2 = bt.translate("   ")
     assert_equal "000000", space_binary1
-    assert_equal "000000", space_binary2
+    assert_equal "000000000000000000", space_binary2
   end
 
   def test_spaces_and_characters_handling
