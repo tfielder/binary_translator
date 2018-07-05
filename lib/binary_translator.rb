@@ -43,7 +43,11 @@ class BinaryTranslator
   end
 
   def binary_to_strings(binary)
-    return binary.scan(/....../)
+    binary.scan(/....../)
+  end
+
+  def complete_binary?(string)
+    #check to make sure binary string is full.
   end
 
   def translates_to_text(binary)
