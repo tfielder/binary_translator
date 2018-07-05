@@ -19,4 +19,16 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "011010", z_binary
     assert_equal "010100010101010010001001001110000111", turing_binary
   end
+
+  def test_translate_capital_letter_strings_to_binary
+    bt = BinaryTranslator.new
+    a_binary = bt.translate("a")
+    a_capital = bt.translate("A")
+    turing_binary = bt.translate("turing")
+    turing_capital = bt.translate("TURING")
+    assert_equal "000001", a_binary
+    assert_equal "000001", a_capital
+    assert_equal "010100010101010010001001001110000111", turing_capital
+    assert_equal "010100010101010010001001001110000111", turing_binary
+  end
 end
