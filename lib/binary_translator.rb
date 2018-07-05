@@ -42,8 +42,8 @@ class BinaryTranslator
   # end
 
   def translate(string)
-    lowercase(string)
-    array_characters = string.downcase.delete("!@{$#%^&*()}~`_-+=[]|;:'/<>.,?").chars
+    #lowercase(string)
+    array_characters = string.downcase.delete("!@{$#%^&*()}~`_=[]|;:'/\'<>\".,-?+\\").chars
     array_for_string = []
     array_characters.each do |char|
       array_for_string.push(@alpha_to_binary[char])
