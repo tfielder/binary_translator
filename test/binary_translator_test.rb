@@ -64,6 +64,16 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal ["000001", "000010", "000011"], array_of_six
   end
 
+  def test_complete_binary?
+    bt = BinaryTranslator.new
+    completion1 = bt.complete_binary?("000001000010000011")
+    assert_equal true, completion1
+    completion2 = bt.complete_binary?("000")
+    refute true, completion2
+    completion3 = bt.complete_binary?("00101100")
+    refute true, completion3
+  end
+
   def test_translates_to_text
     skip
     bt = BinaryTranslator.new

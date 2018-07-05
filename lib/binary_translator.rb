@@ -47,7 +47,7 @@ class BinaryTranslator
   end
 
   def complete_binary?(string)
-    #check to make sure binary string is full.
+    return string.count % 6 == 0
   end
 
   def translates_to_text(binary)
