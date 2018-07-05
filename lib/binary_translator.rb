@@ -1,3 +1,4 @@
+
 class BinaryTranslator
   attr_reader :alpha_to_binary
 
@@ -47,11 +48,19 @@ class BinaryTranslator
   end
 
   def complete_binary?(string)
-    return string.count % 6 == 0
+    (string.size.to_f % 6.0) == 0
   end
 
-  def translates_to_text(binary)
-
+  def translate_to_text(binary)
+    if complete_binary?(binary)
+      array = binary_to_strings(binary)
+      array.map! do |digits|
+        digits = @alpha_to_binary.key(digits)
+      end
+      return array.join
+    else
+      return "Missing digits? Your binary is not complete?"
+    end
   end
 
 end

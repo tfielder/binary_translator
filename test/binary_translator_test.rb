@@ -1,6 +1,7 @@
 require './lib/binary_translator'
 require 'minitest/autorun'
 require 'minitest/pride'
+require "pry"
 
 class BinaryTranslatorTest < Minitest::Test
   def test_initiates_a_class
@@ -69,16 +70,16 @@ class BinaryTranslatorTest < Minitest::Test
     completion1 = bt.complete_binary?("000001000010000011")
     assert_equal true, completion1
     completion2 = bt.complete_binary?("000")
-    refute true, completion2
+    assert_equal false, completion2
     completion3 = bt.complete_binary?("00101100")
-    refute true, completion3
+    assert_equal false, completion3
   end
 
-  def test_translates_to_text
-    skip
+  def test_translate_to_text
     bt = BinaryTranslator.new
-    sentence1 = bt.translate_to_text("001000000101001100001100001111000000010
-    111001111010010001100000100")
-    assert_equal "hello world", sentence1
+    sentence_1 = bt.translate_to_text("001000000101001100001100001111000000010111001111010010001100000100")
+    assert_equal "hello world", sentence_1
+    sentence_2 = bt.translate_to_text("0010001020304")
+    assert_equal "Missing digits? Your binary is not complete?", sentence_2
   end
 end
