@@ -58,6 +58,13 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "001000000101001100001100001111000000010111001111010010001100000100", sentence1
   end
 
+  def test_binary_to_string_six_characters
+    bt = BinaryTranslator.new
+    array_of_six = bt.binary_to_strings("000001000010000011")
+    assert_equal ["a", "b", "c"], array_of_six
+    
+  end
+
   def test_translates_to_text
     bt = BinaryTranslator.new
     sentence1 = bt.translate_to_text("001000000101001100001100001111000000010
