@@ -32,5 +32,12 @@ class BinaryTranslator
     }
   end
 
-  def
+  def translate(string)
+    array_characters = string.chars
+    array_for_string = []
+    array_characters.each do |character|
+      @alpha_to_binary[character] << array_for_string
+    end
+    return array_for_string.join
+  end
 end
