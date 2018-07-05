@@ -31,4 +31,14 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "010100010101010010001001001110000111", turing_capital
     assert_equal "010100010101010010001001001110000111", turing_binary
   end
+
+  def test_characters_not_letters
+    bt = BinaryTranslator.new
+    character_binary1 = bt.translate("!@{$#%^&*()}")
+    character_binary2 = bt.translate("!")
+    character_binary3 = bt.translate("*")
+    assert_equal "", character_binary1
+    assert_equal "", character_binary2
+    assert_equal "", character_binary3
+  end
 end
